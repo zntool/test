@@ -1,0 +1,22 @@
+{
+  "name": "zntool/test",
+  "type": "extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Yamshikov Vitaliy",
+      "email": "theyamshikov@yandex.ru"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "codeception/verify": "0.3.3",
+    "phpunit/phpunit": "6.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "PhpLab\\Test\\": "src",
+      "PhpLab\\Test\\Tests\\": "tests"
+    }
+  }
+}
