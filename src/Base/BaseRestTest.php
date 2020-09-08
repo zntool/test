@@ -1,12 +1,12 @@
 <?php
 
-namespace PhpLab\Test\Base;
+namespace ZnTool\Test\Base;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
-use PhpLab\Rest\Contract\Authorization\AuthorizationInterface;
-use PhpLab\Rest\Contract\Authorization\BearerAuthorization;
-use PhpLab\Rest\Contract\Client\RestClient;
+use ZnLib\Rest\Contract\Authorization\AuthorizationInterface;
+use ZnLib\Rest\Contract\Authorization\BearerAuthorization;
+use ZnLib\Rest\Contract\Client\RestClient;
 use Psr\Http\Message\ResponseInterface;
 
 abstract class BaseRestTest extends BaseTest

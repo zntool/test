@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpLab\Test\Base;
+namespace ZnTool\Test\Base;
 
-use PhpLab\Test\Asserts\RestWebAssert;
+use ZnTool\Test\Asserts\RestWebAssert;
 use Psr\Http\Message\ResponseInterface;
 
 abstract class BaseRestWebTest extends BaseRestTest

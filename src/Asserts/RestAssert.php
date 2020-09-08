@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpLab\Test\Asserts;
+namespace ZnTool\Test\Asserts;
 
-use PhpLab\Test\Helpers\RestHelper;
+use ZnTool\Test\Helpers\RestHelper;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 

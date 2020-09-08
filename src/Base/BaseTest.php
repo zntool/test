@@ -1,10 +1,10 @@
 <?php
 
-namespace PhpLab\Test\Base;
+namespace ZnTool\Test\Base;
 
-use PhpLab\Core\Domain\Exceptions\UnprocessibleEntityException;
-use PhpLab\Core\Domain\Helpers\EntityHelper;
-use PhpLab\Test\Libs\FixtureLoader;
+use ZnCore\Base\Domain\Exceptions\UnprocessibleEntityException;
+use ZnCore\Base\Domain\Helpers\EntityHelper;
+use ZnTool\Test\Libs\FixtureLoader;
 use PHPUnit\Framework\TestCase;
 
 abstract class BaseTest extends TestCase

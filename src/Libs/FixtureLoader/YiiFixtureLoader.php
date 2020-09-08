@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpLab\Test\Libs\FixtureLoader;
+namespace ZnTool\Test\Libs\FixtureLoader;
 
-use PhpLab\Core\Helpers\InstanceHelper;
+use ZnCore\Base\Helpers\InstanceHelper;
 use yii\test\Fixture;
 
 class YiiFixtureLoader implements FixtureLoaderInterface

@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpLab\Test\Libs\FixtureLoader;
+namespace ZnTool\Test\Libs\FixtureLoader;
 
 interface FixtureLoaderInterface
 {

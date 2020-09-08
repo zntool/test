@@ -1,9 +1,9 @@
 <?php
 
-namespace PhpLab\Test\Asserts;
+namespace ZnTool\Test\Asserts;
 
-use PhpLab\Core\Helpers\StringHelper;
-use PhpLab\Test\Helpers\RestHelper;
+use ZnCore\Base\Helpers\StringHelper;
+use ZnTool\Test\Helpers\RestHelper;
 use Psr\Http\Message\ResponseInterface;
 
 class RestWebAssert extends RestAssert

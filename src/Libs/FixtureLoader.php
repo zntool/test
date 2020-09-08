@@ -1,13 +1,13 @@
 <?php
 
-namespace PhpLab\Test\Libs;
+namespace ZnTool\Test\Libs;
 
-use PhpLab\Eloquent\Db\Helpers\Manager;
-use PhpLab\Eloquent\Fixture\Repositories\DbRepository;
-use PhpLab\Eloquent\Fixture\Repositories\FileRepository;
-use PhpLab\Eloquent\Fixture\Services\FixtureService;
-use PhpLab\Test\Libs\FixtureLoader\FixtureLoaderInterface;
-use PhpLab\Test\Libs\FixtureLoader\YiiFixtureLoader;
+use ZnCore\Db\Db\Helpers\Manager;
+use ZnCore\Db\Fixture\Repositories\DbRepository;
+use ZnCore\Db\Fixture\Repositories\FileRepository;
+use ZnCore\Db\Fixture\Services\FixtureService;
+use ZnTool\Test\Libs\FixtureLoader\FixtureLoaderInterface;
+use ZnTool\Test\Libs\FixtureLoader\YiiFixtureLoader;
 use yii\test\Fixture;
 
 class FixtureLoader
