@@ -16,8 +16,6 @@
   },
   "autoload": {
     "psr-4": {
-      "PhpLab\\Test\\": "src",
-      "PhpLab\\Test\\Tests\\": "tests",
       "ZnTool\\Test\\": "src",
       "ZnTool\\Test\\Tests\\": "tests"
     }
