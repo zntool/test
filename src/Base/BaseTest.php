@@ -2,8 +2,8 @@
 
 namespace ZnTool\Test\Base;
 
-use ZnCore\Base\Domain\Exceptions\UnprocessibleEntityException;
-use ZnCore\Base\Domain\Helpers\EntityHelper;
+use ZnCore\Domain\Exceptions\UnprocessibleEntityException;
+use ZnCore\Domain\Helpers\EntityHelper;
 use ZnTool\Test\Libs\FixtureLoader;
 use PHPUnit\Framework\TestCase;
 
