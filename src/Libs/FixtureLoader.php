@@ -2,10 +2,10 @@
 
 namespace ZnTool\Test\Libs;
 
-use ZnCore\Db\Db\Capsule\Manager;
-use ZnCore\Db\Fixture\Repositories\DbRepository;
-use ZnCore\Db\Fixture\Repositories\FileRepository;
-use ZnCore\Db\Fixture\Services\FixtureService;
+use ZnLib\Db\Capsule\Manager;
+use ZnLib\Fixture\Domain\Repositories\DbRepository;
+use ZnLib\Fixture\Domain\Repositories\FileRepository;
+use ZnLib\Fixture\Domain\Services\FixtureService;
 use ZnTool\Test\Libs\FixtureLoader\FixtureLoaderInterface;
 use ZnTool\Test\Libs\FixtureLoader\YiiFixtureLoader;
 use yii\test\Fixture;
