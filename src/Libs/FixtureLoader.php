@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Libs;
 
-use ZnCore\Db\Db\Helpers\Manager;
+use ZnCore\Db\Db\Capsule\Manager;
 use ZnCore\Db\Fixture\Repositories\DbRepository;
 use ZnCore\Db\Fixture\Repositories\FileRepository;
 use ZnCore\Db\Fixture\Services\FixtureService;
