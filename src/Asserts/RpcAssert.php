@@ -2,6 +2,7 @@
 
 namespace ZnTool\Test\Asserts;
 
+use App\Bus\Domain\Enums\RpcErrorCodeEnum;
 use ZnCore\Base\Enums\Http\HttpHeaderEnum;
 use ZnCore\Base\Enums\Http\HttpStatusCodeEnum;
 use ZnCore\Base\Legacy\Yii\Helpers\ArrayHelper;
@@ -62,7 +63,7 @@ class RpcAssert extends RestApiAssert
     {
         $this->assertIsError();
         $this->assertErrorMessage('Parameter validation error');
-        $this->assertErrorCode(HttpStatusCodeEnum::UNPROCESSABLE_ENTITY);
+        $this->assertErrorCode(RpcErrorCodeEnum::INVALID_PARAMS);
         if ($fieldNames) {
             foreach ($this->getError()['violations'] as $item) {
                 if (empty($item['field']) || empty($item['message'])) {
