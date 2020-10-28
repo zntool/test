@@ -28,6 +28,7 @@ abstract class BaseRpcTest extends BaseTest
     {
         $response = $this->getRestClient()->sendPost('/json-rpc', [
             'data' => json_encode([
+                'jsonrpc' => '2.0',
                 'method' => $method,
                 'params' => $params,
                 'id' => $id,
