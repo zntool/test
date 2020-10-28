@@ -2,6 +2,7 @@
 
 namespace ZnTool\Test\Asserts;
 
+use ZnCore\Base\Legacy\Yii\Helpers\ArrayHelper;
 use ZnTool\Test\Helpers\RestHelper;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
@@ -27,6 +28,11 @@ abstract class RestAssert extends TestCase
     public function getBody()
     {
         return $this->body;
+    }
+
+    public function getBodyValue(string $key)
+    {
+        return ArrayHelper::getValue($this->body, $key);
     }
 
     public function assertStatusCode(int $actualStatus, ResponseInterface $response = null)
