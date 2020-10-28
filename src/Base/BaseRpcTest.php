@@ -18,7 +18,7 @@ abstract class BaseRpcTest extends BaseTest
 
     private $restClient;
 
-    protected function getRestAssert(ResponseInterface $response = null): RpcAssert
+    protected function getRpcAssert(ResponseInterface $response = null): RpcAssert
     {
         $assert = new RpcAssert($response);
         return $assert;

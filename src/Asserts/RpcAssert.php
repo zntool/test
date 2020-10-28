@@ -12,6 +12,13 @@ use Psr\Http\Message\ResponseInterface;
 class RpcAssert extends RestApiAssert
 {
 
+    public function __construct(ResponseInterface $response = null)
+    {
+        parent::__construct($response);
+        $this->assertEqualsBodyValue('2.0', 'jsonrpc');
+        $this->assertArrayHasKey('id', $this->getBody());
+    }
+
     public function getResult()
     {
         return ArrayHelper::getValue($this->body, 'result');
@@ -28,6 +35,7 @@ class RpcAssert extends RestApiAssert
     }
 
     public function assertIsError() {
+//        $this->assertEmpty($this->getBody());
         $this->assertNotEmpty($this->getError());
         return $this;
     }
@@ -42,6 +50,12 @@ class RpcAssert extends RestApiAssert
         $this->assertErrorCode(HttpStatusCodeEnum::NOT_FOUND);
         $this->assertErrorMessage($message);
         return $this;
+    }
+
+    public function assertEqualsBodyValue($expected, string $key)
+    {
+        $value = $this->getBodyValue($key);
+        $this->assertEquals($expected, $value);
     }
 
     public function assertUnprocessableEntity(array $fieldNames = [])
