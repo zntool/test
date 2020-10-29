@@ -24,13 +24,14 @@ abstract class BaseRpcTest extends BaseTest
         return $assert;
     }
 
-    protected function sendRequest(string $method, array $params, int $id = null): ResponseInterface
+    protected function sendRequest(string $method, array $params, array $meta = [], int $id = null): ResponseInterface
     {
         $response = $this->getRestClient()->sendPost('/json-rpc', [
             'data' => json_encode([
                 'jsonrpc' => '2.0',
                 'method' => $method,
                 'params' => $params,
+                'meta' => $meta,
                 'id' => $id,
             ]),
         ]);

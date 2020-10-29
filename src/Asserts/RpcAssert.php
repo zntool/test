@@ -20,10 +20,10 @@ class RpcAssert extends RestApiAssert
         $this->assertArrayHasKey('id', $this->getBody());
     }
 
-    public function getResult()
+    /*public function getResult()
     {
         return ArrayHelper::getValue($this->body, 'result');
-    }
+    }*/
 
     public function getError()
     {
@@ -31,13 +31,18 @@ class RpcAssert extends RestApiAssert
     }
 
     public function assertErrorCode(int $code) {
+        $this->assertIsError();
         $this->assertEquals($code, $this->getError()['code']);
         return $this;
     }
 
     public function assertIsError() {
-//        $this->assertEmpty($this->getBody());
         $this->assertNotEmpty($this->getError());
+        return $this;
+    }
+
+    public function assertIsResult() {
+        $this->assertNotEmpty($this->getBody());
         return $this;
     }
 
@@ -79,6 +84,7 @@ class RpcAssert extends RestApiAssert
     public function assertSuccessResponse(array $result = [], int $id = null)
     {
         $this
+            ->assertIsResult()
             ->assertStatusCode(HttpStatusCodeEnum::OK)
             ->assertBody([
                 'jsonrpc' => '2.0',
