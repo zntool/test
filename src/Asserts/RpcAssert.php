@@ -65,7 +65,7 @@ class RpcAssert extends RestApiAssert
         $this->assertErrorMessage('Parameter validation error');
         $this->assertErrorCode(RpcErrorCodeEnum::INVALID_PARAMS);
         if ($fieldNames) {
-            foreach ($this->getError()['violations'] as $item) {
+            foreach ($this->getError()['data'] as $item) {
                 if (empty($item['field']) || empty($item['message'])) {
                     $this->expectExceptionMessage('Invalid errors array!');
                 }
