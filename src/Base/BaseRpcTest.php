@@ -17,6 +17,18 @@ abstract class BaseRpcTest extends BaseTest
 {
 
     private $restClient;
+    
+    protected function authBy(string $login, string $password)
+    {
+        $response = $this->sendRequest('auth.getToken', [
+            'login' => $login,
+            'password' => $password,
+        ]);
+
+        $assert = $this->getRpcAssert($response);
+        $token = $assert->getBodyValue('result.token');
+        return $token;
+    }
 
     protected function getRpcAssert(ResponseInterface $response = null): RpcAssert
     {
