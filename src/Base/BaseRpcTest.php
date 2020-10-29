@@ -2,9 +2,11 @@
 
 namespace ZnTool\Test\Base;
 
+use App\Bus\Domain\Entities\RpcRequestEntity;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 use ZnCore\Base\Enums\Http\HttpStatusCodeEnum;
+use ZnCore\Domain\Helpers\EntityHelper;
 use ZnLib\Rest\Contract\Authorization\AuthorizationInterface;
 use ZnLib\Rest\Contract\Authorization\BearerAuthorization;
 use ZnLib\Rest\Contract\Client\RestClient;
@@ -34,6 +36,16 @@ abstract class BaseRpcTest extends BaseTest
     {
         $assert = new RpcAssert($response);
         return $assert;
+    }
+
+    protected function sendRequestByEntity(RpcRequestEntity $requestEntity): ResponseInterface
+    {
+        $requestEntity->setJsonrpc('2.0');
+        $data = EntityHelper::toArray($requestEntity);
+        $response = $this->getRestClient()->sendPost('/json-rpc', [
+            'data' => json_encode($data),
+        ]);
+        return $response;
     }
 
     protected function sendRequest(string $method, array $params, array $meta = [], int $id = null): ResponseInterface

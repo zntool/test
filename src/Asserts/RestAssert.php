@@ -7,7 +7,7 @@ use ZnTool\Test\Helpers\RestHelper;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;
 
-abstract class RestAssert extends TestCase
+abstract class RestAssert extends BaseAssert
 {
 
     protected $response;
