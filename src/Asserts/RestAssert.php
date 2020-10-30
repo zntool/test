@@ -42,5 +42,4 @@ abstract class RestAssert extends BaseAssert
         $this->assertEquals($actualStatus, $statusCode);
         return $this;
     }
-
 }
