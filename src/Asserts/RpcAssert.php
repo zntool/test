@@ -31,7 +31,6 @@ class RpcAssert extends BaseAssert //RestApiAssert
     }*/
 
     public function assertErrorCode(int $code) {
-        $this->assertIsError();
         $this->assertEquals($code, $this->response->getError()['code']);
         return $this;
     }
@@ -95,16 +94,4 @@ class RpcAssert extends BaseAssert //RestApiAssert
         return $this;
     }
 
-    public function assertErrorResponse(array $error, int $id = null)
-    {
-        $this
-            ->assertIsError()
-            ->assertStatusCode(HttpStatusCodeEnum::OK)
-            ->assertBody([
-                'jsonrpc' => '2.0',
-                'error' => $error,
-                'id' => $id,
-            ]);
-        return $this;
-    }
 }

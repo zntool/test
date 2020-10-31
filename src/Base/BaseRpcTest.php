@@ -6,6 +6,7 @@ use App\Bus\Domain\Entities\RpcRequestEntity;
 use App\Bus\Domain\Entities\RpcResponseEntity;
 use App\Bus\Domain\Entities\RpcResponseErrorEntity;
 use App\Bus\Domain\Entities\RpcResponseResultEntity;
+use App\Bus\Domain\Enums\RpcVersionEnum;
 use GuzzleHttp\Client;
 use Psr\Http\Message\ResponseInterface;
 use ZnCore\Base\Enums\Http\HttpStatusCodeEnum;
@@ -40,28 +41,9 @@ abstract class BaseRpcTest extends BaseTest
         return $assert;
     }
 
-    protected function responseToRpcResponse(ResponseInterface $response): RpcResponseEntity {
-        $data = RestResponseHelper::getBody(clone $response, $response->getBody()->getContents());
-
-        if(isset($data['error'])) {
-            $rpcResponse = new RpcResponseErrorEntity();
-        } else {
-            $rpcResponse = new RpcResponseResultEntity();
-        }
-
-        EntityHelper::setAttributes($rpcResponse, $data);
-        return $rpcResponse;
-    }
-
     protected function sendRequestByEntity(RpcRequestEntity $requestEntity): RpcResponseEntity
     {
-        $requestEntity->setJsonrpc('2.0');
-        $data = EntityHelper::toArray($requestEntity);
-        $response = $this->getRestClient()->sendPost('/json-rpc', [
-            'data' => json_encode($data),
-        ]);
-        $this->assertEquals(200, $response->getStatusCode());
-        return $this->responseToRpcResponse($response);
+        return $this->getRpcClient()->sendRequestByEntity($requestEntity);
     }
 
     protected function sendRequest(string $method, array $params = [], array $meta = [], int $id = null): RpcResponseEntity
@@ -89,7 +71,7 @@ abstract class BaseRpcTest extends BaseTest
         return new BearerAuthorization($guzzleClient);
     }
 
-    protected function getRestClient(): RpcClient
+    protected function getRpcClient(): RpcClient
     {
         $guzzleClient = $this->getGuzzleClient();
         $authAgent = $this->getAuthorizationContract($guzzleClient);
