@@ -59,6 +59,7 @@ abstract class BaseRpcTest extends BaseTest
 
     protected function printContent(ResponseInterface $response = null, string $filter = null)
     {
+        $response->getBody()->rewind();
         $content = $response->getBody()->getContents();
         if ($filter) {
             $content = $filter($content);
@@ -81,7 +82,7 @@ abstract class BaseRpcTest extends BaseTest
     protected function getGuzzleClient(): Client
     {
         $config = [
-            'base_uri' => $this->getBaseUrl() . '/',
+            'base_uri' => $this->getBaseUrl(),
         ];
         $client = new Client($config);
         return $client;
