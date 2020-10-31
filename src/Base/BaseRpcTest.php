@@ -57,10 +57,9 @@ abstract class BaseRpcTest extends BaseTest
         return $response;
     }
 
-    protected function printContent(ResponseInterface $response = null, string $filter = null)
+    protected function printContent(RpcResponseEntity $response = null, string $filter = null)
     {
-        $response->getBody()->rewind();
-        $content = $response->getBody()->getContents();
+        $content = EntityHelper::toArray($response);
         if ($filter) {
             $content = $filter($content);
         }

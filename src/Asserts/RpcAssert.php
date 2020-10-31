@@ -3,6 +3,7 @@
 namespace ZnTool\Test\Asserts;
 
 use App\Bus\Domain\Entities\RpcResponseEntity;
+use App\Bus\Domain\Entities\RpcResponseResultEntity;
 use App\Bus\Domain\Enums\RpcErrorCodeEnum;
 use ZnCore\Base\Enums\Http\HttpHeaderEnum;
 use ZnCore\Base\Enums\Http\HttpStatusCodeEnum;
@@ -41,13 +42,19 @@ class RpcAssert extends BaseAssert //RestApiAssert
     }
 
     public function assertIsResult() {
-        $this->assertNotEmpty($this->response->getResult());
+//        $this->assertNotEmpty($this->response->getResult());
+        $this->assertInstanceOf(RpcResponseResultEntity::class, $this->response);
         return $this;
     }
 
     public function assertResult($expectedResult)
     {
-        $this->assertArraySubset($expectedResult, $this->response->getResult());
+        $this->assertIsResult();
+        if(is_array($expectedResult)) {
+            $this->assertArraySubset($expectedResult, $this->response->getResult());
+        } else {
+            $this->assertEquals($expectedResult, $this->response->getResult());
+        }
     }
 
     public function assertErrorMessage(string $message) {
