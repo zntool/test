@@ -2,6 +2,7 @@
 
 namespace ZnTool\Test\Asserts;
 
+use App\Bus\Domain\Entities\RpcResponseEntity;
 use App\Bus\Domain\Enums\RpcErrorCodeEnum;
 use ZnCore\Base\Enums\Http\HttpHeaderEnum;
 use ZnCore\Base\Enums\Http\HttpStatusCodeEnum;
@@ -10,14 +11,18 @@ use ZnLib\Rest\Helpers\RestResponseHelper;
 use ZnTool\Test\Helpers\RestHelper;
 use Psr\Http\Message\ResponseInterface;
 
-class RpcAssert extends RestApiAssert
+class RpcAssert extends BaseAssert //RestApiAssert
 {
 
-    public function __construct(ResponseInterface $response = null)
+    protected $response;
+
+    public function __construct(RpcResponseEntity $response = null)
     {
-        parent::__construct($response);
-        $this->assertEqualsBodyValue('2.0', 'jsonrpc');
-        $this->assertArrayHasKey('id', $this->getBody());
+        $this->response = $response;
+        $this->assertEquals('2.0', $response->getJsonrpc());
+
+//        $this->assertEqualsBodyValue('2.0', 'jsonrpc');
+//        $this->assertArrayHasKey('id', $this->getBody());
     }
 
     /*public function getResult()
@@ -25,29 +30,29 @@ class RpcAssert extends RestApiAssert
         return ArrayHelper::getValue($this->body, 'result');
     }*/
 
-    public function getError()
-    {
-        return ArrayHelper::getValue($this->body, 'error');
-    }
-
     public function assertErrorCode(int $code) {
         $this->assertIsError();
-        $this->assertEquals($code, $this->getError()['code']);
+        $this->assertEquals($code, $this->response->getError()['code']);
         return $this;
     }
 
     public function assertIsError() {
-        $this->assertNotEmpty($this->getError());
+        $this->assertNotEmpty($this->response->getError());
         return $this;
     }
 
     public function assertIsResult() {
-        $this->assertNotEmpty($this->getBody());
+        $this->assertNotEmpty($this->response->getResult());
         return $this;
     }
 
+    public function assertResult($expectedResult)
+    {
+        $this->assertArraySubset($expectedResult, $this->response->getResult());
+    }
+
     public function assertErrorMessage(string $message) {
-        $this->assertEquals($message, $this->getError()['message']);
+        $this->assertEquals($message, $this->response->getError()['message']);
         return $this;
     }
 
@@ -70,7 +75,7 @@ class RpcAssert extends RestApiAssert
         $this->assertErrorMessage('Parameter validation error');
         $this->assertErrorCode(RpcErrorCodeEnum::INVALID_PARAMS);
         if ($fieldNames) {
-            foreach ($this->getError()['data'] as $item) {
+            foreach ($this->response->getError()['data'] as $item) {
                 if (empty($item['field']) || empty($item['message'])) {
                     $this->expectExceptionMessage('Invalid errors array!');
                 }
@@ -85,12 +90,8 @@ class RpcAssert extends RestApiAssert
     {
         $this
             ->assertIsResult()
-            ->assertStatusCode(HttpStatusCodeEnum::OK)
-            ->assertBody([
-                'jsonrpc' => '2.0',
-                'result' => $result,
-                'id' => $id,
-            ]);
+            //->assertErrorCode(HttpStatusCodeEnum::OK)
+            ->assertResult($result);
         return $this;
     }
 
