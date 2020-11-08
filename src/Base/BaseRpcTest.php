@@ -19,12 +19,21 @@ use ZnLib\Rest\Helpers\RestResponseHelper;
 use ZnTool\Test\Asserts\RestApiAssert;
 use ZnTool\Test\Asserts\RpcAssert;
 use ZnTool\Test\Base\BaseRestApiTest;
+use ZnTool\Test\Libs\FixtureLoader;
 
 abstract class BaseRpcTest extends BaseTest
 {
 
     private $restClient;
-    
+
+    protected function setUp(): void
+    {
+        //parent::setUp();
+        $response = $this->sendRequest('fixture.import', [
+            'fixtures' => $this->fixtures(),
+        ]);
+    }
+
     protected function authBy(string $login, string $password)
     {
         $response = $this->sendRequest('auth.getToken', [
