@@ -36,6 +36,11 @@ class RpcAssert extends BaseAssert //RestApiAssert
         return $this;
     }
 
+    public function assertErrorData(array $data) {
+        $this->assertEquals([$data], $this->response->getError()['data']);
+        return $this;
+    }
+
     public function assertIsError() {
         $this->assertNotEmpty($this->response->getError());
         return $this;
