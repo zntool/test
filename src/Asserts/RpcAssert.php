@@ -48,13 +48,15 @@ class RpcAssert extends BaseAssert //RestApiAssert
 
     public function assertIsResult() {
 //        $this->assertNotEmpty($this->response->getResult());
-        $this->assertInstanceOf(RpcResponseResultEntity::class, $this->response);
+//        $this->assertInstanceOf(RpcResponseResultEntity::class, $this->response);
+        $this->assertInstanceOf(RpcResponseEntity::class, $this->response);
         return $this;
     }
 
     public function assertResult($expectedResult)
     {
-        $this->assertIsResult();
+        $this->assertEquals([], $this->response->getError());
+//        $this->assertIsResult();
         if(is_array($expectedResult)) {
             $this->assertArraySubset($expectedResult, $this->response->getResult());
         } else {
