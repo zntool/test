@@ -27,9 +27,10 @@ class FixtureLoader
         if (empty($fixtures)) {
             return;
         }
-        foreach ($fixtures as $fixture) {
+        $this->loadAllFixtures($fixtures);
+        /*foreach ($fixtures as $fixture) {
             $this->loadFixture($fixture);
-        }
+        }*/
     }
 
     private function getFixtureLoaderClass($fixture): string
@@ -65,7 +66,15 @@ class FixtureLoader
             $dbRepository = $container->get(DbRepository::class);
             $fileRepository = $container->get(FileRepository::class);
             $fixtureService = new FixtureService($dbRepository, $fileRepository);
-            $fixtureService->importTable($fixture);
+            $fixtureService->importAll($fixture);
         }
+    }
+    
+    private function loadAllFixtures(array $fixtures) {
+        $container = ContainerHelper::getContainer();
+        $dbRepository = $container->get(DbRepository::class);
+        $fileRepository = $container->get(FileRepository::class);
+        $fixtureService = new FixtureService($dbRepository, $fileRepository);
+        $fixtureService->importAll($fixtures);
     }
 }
