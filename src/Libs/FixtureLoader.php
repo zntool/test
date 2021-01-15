@@ -2,6 +2,8 @@
 
 namespace ZnTool\Test\Libs;
 
+use ZnCore\Base\Libs\App\Helpers\ContainerHelper;
+use ZnCore\Domain\Libs\EntityManager;
 use ZnLib\Db\Capsule\Manager;
 use ZnLib\Fixture\Domain\Repositories\DbRepository;
 use ZnLib\Fixture\Domain\Repositories\FileRepository;
@@ -59,7 +61,10 @@ class FixtureLoader
         } elseif (file_exists($fixture)) {
 
         } else {
-            $fixtureService = new FixtureService(new DbRepository(new Manager), new FileRepository());
+            $container = ContainerHelper::getContainer();
+            $dbRepository = $container->get(DbRepository::class);
+            $fileRepository = $container->get(FileRepository::class);
+            $fixtureService = new FixtureService($dbRepository, $fileRepository);
             $fixtureService->importTable($fixture);
         }
     }
