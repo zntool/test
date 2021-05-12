@@ -32,4 +32,9 @@ abstract class BaseTest extends TestCase
         $this->assertArraySubset($expected, $arr);
     }
 
+    protected function assertEntity($expected, object $entity)
+    {
+        $arr = EntityHelper::toArray($entity);
+        $this->assertArraySubset($expected, $arr);
+    }
 }
