@@ -33,8 +33,10 @@ trait FixtureTrait
 
     protected function setUp(): void
     {
-        parent::setUp();
+        $this->setBaseUrl($_ENV['API_URL']);
+        $this->initFixtureProvider($_ENV['API_URL']);
         $this->importFixture();
+        parent::setUp();
     }
 
     public function initFixtureProvider(string $baseUrl): void
