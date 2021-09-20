@@ -8,6 +8,7 @@ use ZnLib\Rpc\Domain\Libs\RpcFixtureProvider;
 trait FixtureTrait
 {
 
+//    use BaseUrlTrait;
     use ProviderTrait;
     
     private $fixtures = [];
@@ -36,11 +37,18 @@ trait FixtureTrait
         $this->importFixture();
     }
 
-    public function getFixtureProvider(string $baseUrl): RpcFixtureProvider
+    public function initFixtureProvider(string $baseUrl): void
     {
         if(empty($this->fixtureProvider)) {
             $this->fixtureProvider = new RpcFixtureProvider($this->getRpcProvider($baseUrl));
         }
+    }
+    
+    public function getFixtureProvider(string $baseUrl = null): RpcFixtureProvider
+    {
+        /*if(empty($this->fixtureProvider)) {
+            $this->fixtureProvider = new RpcFixtureProvider($this->getRpcProvider($baseUrl));
+        }*/
         return $this->fixtureProvider;
     }
 }

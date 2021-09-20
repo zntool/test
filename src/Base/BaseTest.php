@@ -6,10 +6,13 @@ use ZnCore\Domain\Exceptions\UnprocessibleEntityException;
 use ZnCore\Domain\Helpers\EntityHelper;
 use ZnTool\Test\Libs\FixtureLoader;
 use PHPUnit\Framework\TestCase;
+use ZnTool\Test\Traits\AssertTrait;
 
 abstract class BaseTest extends TestCase
 {
 
+    use AssertTrait;
+    
     protected function fixtures(): array
     {
         return [];
@@ -23,18 +26,5 @@ abstract class BaseTest extends TestCase
             $fixtureLoader = new FixtureLoader;
             $fixtureLoader->load($fixtures);
         }
-    }
-
-    protected function assertUnprocessibleEntityException($expected, UnprocessibleEntityException $e, bool $debug = false)
-    {
-        $errorCollection = $e->getErrorCollection();
-        $arr = EntityHelper::collectionToArray($errorCollection);
-        $this->assertArraySubset($expected, $arr);
-    }
-
-    protected function assertEntity($expected, object $entity)
-    {
-        $arr = EntityHelper::toArray($entity);
-        $this->assertArraySubset($expected, $arr);
     }
 }
