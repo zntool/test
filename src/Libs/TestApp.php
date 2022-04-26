@@ -27,7 +27,7 @@ class TestApp extends BaseApp
     protected function bundles(): array
     {
         $bundles = $this->bundles;
-//        $bundles[] = new \App\AppWeb\Bundle(['all']);
+//        $bundles[] = new \App\Web\Bundle(['all']);
         
         $bundles[] = new \ZnCore\Base\Bundle(['all']);
         $bundles[] = new \ZnCore\Base\Libs\I18Next\Bundle(['all']);
