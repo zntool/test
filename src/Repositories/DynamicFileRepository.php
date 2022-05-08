@@ -5,6 +5,7 @@ namespace ZnTool\Test\Repositories;
 use ZnCore\Base\Exceptions\NotFoundException;
 use ZnCore\Base\Legacy\Yii\Helpers\ArrayHelper;
 use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
+use ZnCore\Base\Libs\FileSystem\Helpers\FileStorageHelper;
 use ZnCore\Base\Libs\Store\StoreFile;
 use ZnCore\Domain\Base\Repositories\BaseFileCrudRepository;
 use ZnCore\Domain\Entities\DynamicEntity;
@@ -59,7 +60,7 @@ class DynamicFileRepository extends BaseFileCrudRepository
 
     public function allAsArray(Query $query = null): array
     {
-        FileHelper::touch($this->fileName());
+        FileStorageHelper::touch($this->fileName());
         $query = Query::forge($query);
         $items = $this->getBody();
         if ($query) {
