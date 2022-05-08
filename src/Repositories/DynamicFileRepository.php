@@ -60,7 +60,7 @@ class DynamicFileRepository extends BaseFileCrudRepository
 
     public function allAsArray(Query $query = null): array
     {
-        FileStorageHelper::touch($this->fileName());
+        FileStorageHelper::touchFile($this->fileName());
         $query = Query::forge($query);
         $items = $this->getBody();
         if ($query) {
