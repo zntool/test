@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Libs;
 
-use ZnCore\Base\Libs\App\Helpers\ContainerHelper;
+use ZnCore\Base\Libs\Container\Helpers\ContainerHelper;
 use ZnCore\Domain\Libs\EntityManager;
 use ZnDatabase\Eloquent\Domain\Capsule\Manager;
 use ZnDatabase\Fixture\Domain\Repositories\DbRepository;

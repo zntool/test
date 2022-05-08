@@ -7,7 +7,7 @@ use Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer;
 use Symfony\Component\HttpKernel\HttpKernel;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
-use ZnCore\Base\Libs\App\Interfaces\ContainerConfiguratorInterface;
+use ZnCore\Base\Libs\Container\Interfaces\ContainerConfiguratorInterface;
 use ZnSandbox\Sandbox\App\Subscribers\ErrorHandleSubscriber;
 use ZnSandbox\Sandbox\App\Subscribers\FindRouteSubscriber;
 use ZnSandbox\Sandbox\App\Subscribers\WebDetectTestEnvSubscriber;
