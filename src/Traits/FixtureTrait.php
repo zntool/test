@@ -27,14 +27,14 @@ trait FixtureTrait
     protected function importFixture() {
         $this->addFixtures($this->fixtures());
         if ($this->fixtures) {
-            $this->getFixtureProvider($_ENV['API_URL'])->import($this->fixtures);
+            $this->getFixtureProvider($_ENV['RPC_URL'])->import($this->fixtures);
         }
     }
 
     protected function setUp(): void
     {
-        $this->setBaseUrl($_ENV['API_URL']);
-        $this->initFixtureProvider($_ENV['API_URL']);
+        $this->setBaseUrl($_ENV['RPC_URL']);
+        $this->initFixtureProvider($_ENV['RPC_URL']);
         $this->importFixture();
         parent::setUp();
     }
