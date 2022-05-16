@@ -4,6 +4,7 @@ namespace ZnTool\Test\Traits;
 
 use ZnCore\Base\Enums\EnvEnum;
 use ZnLib\Rpc\Domain\Facades\RpcClientFacade;
+use ZnLib\Rpc\Domain\Libs\RpcAuthProvider;
 use ZnLib\Rpc\Domain\Libs\RpcProvider;
 
 trait ProviderTrait
@@ -34,9 +35,12 @@ trait ProviderTrait
     
     public function getRpcProvider(string $baseUrl): RpcProvider
     {
-        return 
+        $rpcProvider = 
             (new RpcClientFacade(EnvEnum::TEST))
             ->createRpcProvider($baseUrl);
+        $authProvider = new RpcAuthProvider($rpcProvider);
+        $rpcProvider->setAuthProvider($authProvider);
+        return $rpcProvider;
         
         
 //        return $this->createRpcProvider($baseUrl);
