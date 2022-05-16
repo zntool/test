@@ -2,6 +2,8 @@
 
 namespace ZnTool\Test\Traits;
 
+use ZnCore\Base\Enums\EnvEnum;
+use ZnLib\Rpc\Domain\Facades\RpcClientFacade;
 use ZnLib\Rpc\Domain\Libs\RpcProvider;
 
 trait ProviderTrait
@@ -19,7 +21,7 @@ trait ProviderTrait
         $this->rpcProvider->setDefaultRpcMethodVersion(1);
     }*/
 
-    private function createRpcProvider(string $baseUrl): RpcProvider {
+    /*private function createRpcProvider(string $baseUrl): RpcProvider {
         $rpcProvider = new RpcProvider();
         $rpcProvider->setBaseUrl($baseUrl);
         $rpcProvider->getRpcClient()->setHeaders([
@@ -28,11 +30,17 @@ trait ProviderTrait
 //        $rpcProvider->setDefaultRpcMethod($this->defaultRpcMethod());
         $rpcProvider->setDefaultRpcMethodVersion(1);
         return $rpcProvider;
-    }
+    }*/
     
     public function getRpcProvider(string $baseUrl): RpcProvider
     {
-        return $this->createRpcProvider($baseUrl);
+        return 
+            (new RpcClientFacade(EnvEnum::TEST))
+            ->createRpcProvider($baseUrl);
+        
+        
+//        return $this->createRpcProvider($baseUrl);
+
         /*if(empty($this->rpcProvider)) {
             $this->initRpcProvider($_ENV['API_URL']);
         }
