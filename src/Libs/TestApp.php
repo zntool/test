@@ -10,7 +10,7 @@ use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use ZnCore\Base\Libs\Container\Interfaces\ContainerConfiguratorInterface;
 use ZnSandbox\Sandbox\App\Subscribers\ErrorHandleSubscriber;
 use ZnSandbox\Sandbox\App\Subscribers\FindRouteSubscriber;
-use ZnSandbox\Sandbox\App\Subscribers\WebDetectTestEnvSubscriber;
+//use ZnSandbox\Sandbox\App\Subscribers\WebDetectTestEnvSubscriber;
 use ZnSandbox\Sandbox\App\Subscribers\WebFirewallSubscriber;
 use ZnLib\Web\View\View;
 use ZnSandbox\Sandbox\App\Base\BaseApp;
