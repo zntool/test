@@ -55,14 +55,6 @@ class TestApp extends BaseApp
         return ['i18next', 'container'/*, 'symfonyWeb'*/];
     }
 
-    protected function configDispatcher(EventDispatcherInterface $dispatcher): void
-    {
-        /*$dispatcher->addSubscriber($this->container->get(FindRouteSubscriber::class));
-        $dispatcher->addSubscriber($this->container->get(WebFirewallSubscriber::class));
-        //$dispatcher->addSubscriber($this->container->get(UnauthorizedSubscriber::class));
-        $dispatcher->addSubscriber($this->container->get(ErrorHandleSubscriber::class));*/
-    }
-
     protected function configContainer(ContainerConfiguratorInterface $containerConfigurator): void
     {
 //        $containerConfigurator->singleton(HttpKernelInterface::class, HttpKernel::class);
