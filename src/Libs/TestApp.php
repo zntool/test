@@ -2,42 +2,36 @@
 
 namespace ZnTool\Test\Libs;
 
-use Symfony\Component\ErrorHandler\ErrorRenderer\ErrorRendererInterface;
-use Symfony\Component\ErrorHandler\ErrorRenderer\HtmlErrorRenderer;
-use Symfony\Component\HttpKernel\HttpKernel;
-use Symfony\Component\HttpKernel\HttpKernelInterface;
-use Symfony\Contracts\EventDispatcher\EventDispatcherInterface;
 use ZnCore\Base\Libs\Container\Interfaces\ContainerConfiguratorInterface;
-use ZnSandbox\Sandbox\App\Subscribers\ErrorHandleSubscriber;
-use ZnSandbox\Sandbox\App\Subscribers\FindRouteSubscriber;
-//use ZnSandbox\Sandbox\App\Subscribers\WebDetectTestEnvSubscriber;
-use ZnSandbox\Sandbox\App\Subscribers\WebFirewallSubscriber;
-use ZnLib\Web\View\View;
 use ZnSandbox\Sandbox\App\Base\BaseApp;
+
+//use ZnSandbox\Sandbox\App\Subscribers\WebDetectTestEnvSubscriber;
 
 class TestApp extends BaseApp
 {
 
     protected $bundles = [];
-    
-    public function setBundles(array $bundles) {
+
+    public function setBundles(array $bundles)
+    {
         $this->bundles = $bundles;
     }
-    
+
     protected function bundles(): array
     {
         $bundles = $this->bundles;
 //        $bundles[] = new \App\Web\Bundle(['all']);
-        
+
         $bundles[] = new \ZnCore\Base\Bundle(['all']);
         $bundles[] = new \ZnCore\Base\Libs\I18Next\Bundle(['all']);
         $bundles[] = new \ZnSandbox\Sandbox\App\Bundle(['all']);
         $bundles[] = \ZnDatabase\Base\Bundle::class;
+        $bundles[] = \ZnDatabase\Fixture\Bundle::class;
 //        $bundles[] = new \ZnSandbox\Sandbox\Symfony\NewBundle(['all']);
-        
+
         return $bundles;
     }
-    
+
     public function appName(): string
     {
         return 'test';
