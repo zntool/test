@@ -5,8 +5,8 @@ namespace ZnTool\Test\Facades;
 use Illuminate\Container\Container;
 use ZnCore\Base\Libs\Container\Helpers\ContainerHelper;
 use ZnCore\Base\Libs\Container\Interfaces\ContainerConfiguratorInterface;
-use ZnSandbox\Sandbox\App\Interfaces\AppInterface;
-use ZnSandbox\Sandbox\App\Libs\ZnCore;
+use ZnCore\Base\Libs\App\Interfaces\AppInterface;
+use ZnCore\Base\Libs\App\Libs\ZnCore;
 use ZnTool\Test\Libs\TestApp;
 
 class BoostrapTestFacade
