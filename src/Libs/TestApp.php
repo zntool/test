@@ -3,7 +3,7 @@
 namespace ZnTool\Test\Libs;
 
 use ZnCore\Base\Libs\Container\Interfaces\ContainerConfiguratorInterface;
-use ZnSandbox\Sandbox\App\Base\BaseApp;
+use ZnCore\Base\Libs\App\Base\BaseApp;
 
 //use ZnSandbox\Sandbox\App\Subscribers\WebDetectTestEnvSubscriber;
 
