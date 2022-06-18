@@ -27,7 +27,7 @@ class TestApp extends BaseApp
         $bundles[] = new \ZnSandbox\Sandbox\App\Bundle(['all']);
         $bundles[] = \ZnDatabase\Base\Bundle::class;
         $bundles[] = \ZnDatabase\Fixture\Bundle::class;
-//        $bundles[] = new \ZnSandbox\Sandbox\Symfony\NewBundle(['all']);
+//        $bundles[] = new \ZnSymfony\Web\Bundle(['all']);
 
         return $bundles;
     }
