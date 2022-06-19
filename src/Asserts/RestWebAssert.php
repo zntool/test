@@ -2,7 +2,8 @@
 
 namespace ZnTool\Test\Asserts;
 
-use ZnCore\Base\Libs\Text\Helpers\StringHelper;
+
+use ZnCore\Base\Libs\Text\Helpers\TextHelper;
 use ZnTool\Test\Helpers\RestHelper;
 use Psr\Http\Message\ResponseInterface;
 
@@ -20,9 +21,9 @@ class RestWebAssert extends RestAssert
         $response = $response ?? $this->response;
         //$body = StringHelper::removeAllSpace($body);
         $exp = '#[^а-яА-ЯёЁa-zA-Z]+#u';
-        $body = StringHelper::filterChar($this->rawBody, $exp);
+        $body = TextHelper::filterChar($this->rawBody, $exp);
         //$actualString = StringHelper::removeAllSpace($actualString);
-        $actualString = StringHelper::filterChar($actualString, $exp);
+        $actualString = TextHelper::filterChar($actualString, $exp);
         $isFail = mb_strpos($body, $actualString) === false;
         if ($isFail) {
             $this->expectExceptionMessage('Subset string not found in text!');
