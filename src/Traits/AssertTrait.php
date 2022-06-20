@@ -2,6 +2,7 @@
 
 namespace ZnTool\Test\Traits;
 
+use ZnCore\Base\Libs\Entity\Helpers\CollectionHelper;
 use ZnCore\Base\Libs\FileSystem\Helpers\FileStorageHelper;
 use ZnCore\Base\Libs\Store\Helpers\StoreHelper;
 use ZnCore\Base\Libs\Validation\Exceptions\UnprocessibleEntityException;
@@ -14,7 +15,7 @@ trait AssertTrait
     protected function assertUnprocessibleEntityException($expected, UnprocessibleEntityException $e, bool $debug = false)
     {
         $errorCollection = $e->getErrorCollection();
-        $arr = EntityHelper::collectionToArray($errorCollection);
+        $arr = CollectionHelper::toArray($errorCollection);
         $this->assertArraySubset($expected, $arr);
     }
 

@@ -3,6 +3,7 @@
 namespace ZnTool\Test\Asserts;
 
 use Illuminate\Support\Collection;
+use ZnCore\Base\Libs\Entity\Helpers\CollectionHelper;
 use ZnCore\Base\Libs\Entity\Helpers\EntityHelper;
 
 class DataTestCase extends BaseAssert
@@ -14,7 +15,7 @@ class DataTestCase extends BaseAssert
 
     public static function saveToJsonFile(string $fileName, $data) {
         if($data instanceof Collection) {
-            $data = EntityHelper::collectionToArray($data);
+            $data = CollectionHelper::toArray($data);
         }
         file_put_contents(json_encode($data, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT));
     }
