@@ -8,7 +8,7 @@ use ZnCore\Base\Legacy\Yii\Helpers\FileHelper;
 use ZnCore\Base\Libs\FileSystem\Helpers\FileStorageHelper;
 use ZnCore\Base\Libs\Store\StoreFile;
 use ZnCore\Domain\Base\Repositories\BaseFileCrudRepository;
-use ZnCore\Domain\Entities\DynamicEntity;
+use ZnCore\Base\Libs\DynamicEntity\Entities\DynamicEntity;
 use ZnCore\Domain\Helpers\FilterHelper;
 use ZnCore\Domain\Libs\Query;
 use ZnLib\Rpc\Domain\Entities\RpcResponseEntity;
