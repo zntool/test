@@ -3,7 +3,7 @@
 namespace ZnTool\Test\Asserts;
 
 use Illuminate\Support\Collection;
-use ZnCore\Domain\Helpers\EntityHelper;
+use ZnCore\Base\Libs\Entity\Helpers\EntityHelper;
 
 class DataTestCase extends BaseAssert
 {
