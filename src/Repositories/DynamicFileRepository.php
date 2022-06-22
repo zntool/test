@@ -10,7 +10,7 @@ use ZnCore\Base\Libs\Store\StoreFile;
 use ZnCore\Base\Libs\Store\Base\BaseFileCrudRepository;
 use ZnCore\Base\Libs\DynamicEntity\Entities\DynamicEntity;
 use ZnCore\Base\Libs\Arr\Helpers\FilterHelper;
-use ZnCore\Base\Libs\Query\Entities\Query;
+use ZnCore\Domain\Query\Entities\Query;
 use ZnLib\Rpc\Domain\Entities\RpcResponseEntity;
 
 class DynamicFileRepository extends BaseFileCrudRepository
