@@ -3,7 +3,7 @@
 namespace ZnTool\Test\Asserts;
 
 
-use ZnCore\Base\Libs\Text\Helpers\TextHelper;
+use ZnCore\Base\Text\Helpers\TextHelper;
 use ZnTool\Test\Helpers\RestHelper;
 use Psr\Http\Message\ResponseInterface;
 

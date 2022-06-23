@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Asserts;
 
-use ZnCore\Base\Libs\Arr\Helpers\ArrayHelper;
+use ZnCore\Base\Arr\Helpers\ArrayHelper;
 use ZnTool\Test\Helpers\RestHelper;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ResponseInterface;

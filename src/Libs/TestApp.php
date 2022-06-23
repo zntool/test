@@ -2,8 +2,8 @@
 
 namespace ZnTool\Test\Libs;
 
-use ZnCore\Base\Libs\Container\Interfaces\ContainerConfiguratorInterface;
-use ZnCore\Base\Libs\App\Base\BaseApp;
+use ZnCore\Base\Container\Interfaces\ContainerConfiguratorInterface;
+use ZnCore\Base\App\Base\BaseApp;
 
 //use ZnSandbox\Sandbox\App\Subscribers\WebDetectTestEnvSubscriber;
 
@@ -23,8 +23,8 @@ class TestApp extends BaseApp
 //        $bundles[] = new \App\Web\Bundle(['all']);
 
         $bundles[] = new \ZnCore\Base\CommonTranslate\Bundle(['all']);
-        $bundles[] = new \ZnCore\Base\Libs\I18Next\Bundle(['all']);
-        $bundles[] = new \ZnCore\Base\Libs\App\Bundle(['all']);
+        $bundles[] = new \ZnCore\Base\I18Next\Bundle(['all']);
+        $bundles[] = new \ZnCore\Base\App\Bundle(['all']);
         $bundles[] = \ZnDatabase\Base\Bundle::class;
         $bundles[] = \ZnDatabase\Fixture\Bundle::class;
 //        $bundles[] = new \ZnSymfony\Web\Bundle(['all']);
