@@ -3,7 +3,7 @@
 namespace ZnTool\Test\Asserts;
 
 use PHPUnit\Framework\TestCase;
-use ZnCore\Base\Legacy\Yii\Helpers\ArrayHelper;
+use ZnCore\Base\Libs\Arr\Helpers\ArrayHelper;
 use ZnTool\Test\Helpers\RestHelper;
 
 abstract class BaseAssert extends TestCase

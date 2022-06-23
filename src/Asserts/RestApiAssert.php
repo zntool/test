@@ -4,7 +4,7 @@ namespace ZnTool\Test\Asserts;
 
 use ZnCore\Base\Libs\Http\Enums\HttpHeaderEnum;
 use ZnCore\Base\Libs\Http\Enums\HttpStatusCodeEnum;
-use ZnCore\Base\Legacy\Yii\Helpers\ArrayHelper;
+use ZnCore\Base\Libs\Arr\Helpers\ArrayHelper;
 use ZnLib\Rest\Helpers\RestResponseHelper;
 use ZnTool\Test\Helpers\RestHelper;
 use Psr\Http\Message\ResponseInterface;
