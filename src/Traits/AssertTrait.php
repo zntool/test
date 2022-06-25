@@ -4,7 +4,7 @@ namespace ZnTool\Test\Traits;
 
 use ZnCore\Domain\Entity\Helpers\CollectionHelper;
 use ZnCore\Base\FileSystem\Helpers\FileStorageHelper;
-use ZnCore\Base\Store\Helpers\StoreHelper;
+use ZnLib\Components\Store\Helpers\StoreHelper;
 use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Domain\Entity\Helpers\EntityHelper;
 use ZnTool\Test\Helpers\TestHelper;

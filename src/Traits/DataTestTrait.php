@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Traits;
 
-use ZnCore\Base\Store\StoreFile;
+use ZnLib\Components\Store\StoreFile;
 
 trait DataTestTrait
 {

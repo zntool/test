@@ -22,9 +22,9 @@ class TestApp extends BaseApp
         $bundles = $this->bundles;
 //        $bundles[] = new \App\Web\Bundle(['all']);
 
-        $bundles[] = new \ZnCore\Base\CommonTranslate\Bundle(['all']);
-        $bundles[] = new \ZnCore\Base\SymfonyTranslation\Bundle(['all']);
-        $bundles[] = new \ZnCore\Base\I18Next\Bundle(['all']);
+        $bundles[] = new \ZnLib\Components\CommonTranslate\Bundle(['all']);
+        $bundles[] = new \ZnLib\Components\SymfonyTranslation\Bundle(['all']);
+        $bundles[] = new \ZnLib\Components\I18Next\Bundle(['all']);
         $bundles[] = new \ZnCore\Base\App\Bundle(['all']);
         $bundles[] = \ZnDatabase\Base\Bundle::class;
         $bundles[] = \ZnDatabase\Fixture\Bundle::class;

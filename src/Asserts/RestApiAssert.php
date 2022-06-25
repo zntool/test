@@ -2,8 +2,8 @@
 
 namespace ZnTool\Test\Asserts;
 
-use ZnCore\Base\Http\Enums\HttpHeaderEnum;
-use ZnCore\Base\Http\Enums\HttpStatusCodeEnum;
+use ZnLib\Components\Http\Enums\HttpHeaderEnum;
+use ZnLib\Components\Http\Enums\HttpStatusCodeEnum;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
 use ZnLib\Rest\Helpers\RestResponseHelper;
 use ZnTool\Test\Helpers\RestHelper;
