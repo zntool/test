@@ -10,13 +10,6 @@ use ZnCore\Base\App\Base\BaseApp;
 class TestApp extends BaseApp
 {
 
-    protected $bundles = [];
-
-    public function setBundles(array $bundles)
-    {
-        $this->bundles = $bundles;
-    }
-
     protected function bundles(): array
     {
         $bundles = $this->bundles;
