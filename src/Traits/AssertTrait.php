@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Traits;
 
-use App\Gosp\Message\Domain\Entities\ResponseEntity;
+use OrleuPackage\Gosp\Message\Domain\Entities\ResponseEntity;
 use Illuminate\Support\Enumerable;
 use ZnCore\Base\Validation\Helpers\ErrorCollectionHelper;
 use ZnCore\Domain\Entity\Helpers\CollectionHelper;
