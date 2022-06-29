@@ -2,14 +2,12 @@
 
 namespace ZnTool\Test\Traits;
 
-use OrleuPackage\Gosp\Message\Domain\Entities\ResponseEntity;
 use Illuminate\Support\Enumerable;
-use ZnCore\Base\Validation\Helpers\ErrorCollectionHelper;
-use ZnCore\Domain\Entity\Helpers\CollectionHelper;
 use ZnCore\Base\FileSystem\Helpers\FileStorageHelper;
-use ZnLib\Components\Store\Helpers\StoreHelper;
 use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;
+use ZnCore\Domain\Entity\Helpers\CollectionHelper;
 use ZnCore\Domain\Entity\Helpers\EntityHelper;
+use ZnLib\Components\Store\Helpers\StoreHelper;
 use ZnTool\Test\Helpers\TestHelper;
 
 trait AssertTrait
@@ -41,7 +39,7 @@ trait AssertTrait
     {
         $arr = EntityHelper::toArray($entity);
         $this->assertArraySubset($expected, $arr);
-        if($instanceOf) {
+        if ($instanceOf) {
             $this->assertInstanceOf($instanceOf, $entity);
         }
     }
