@@ -17,7 +17,7 @@ class DynamicFileRepository extends BaseFileCrudRepository
 
     private $fileName;
 
-//    public function all(Query $query = null)
+//    public function findAll(Query $query = null)
 //    {
 //        $items = $this->getItems();
 //        if ($query) {
