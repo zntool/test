@@ -68,7 +68,7 @@ class DynamicFileRepository extends BaseFileCrudRepository
         return $items;
     }
 
-    public function oneByIdAsArray(int $id, Query $query = null): array
+    public function findOneByIdAsArray(int $id, Query $query = null): array
     {
         $query = Query::forge($query);
         $query->where('id', $id);
