@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Facades;
 
-use Illuminate\Container\Container;
+use ZnCore\Base\Container\Libs\Container;
 use ZnCore\Base\Container\Helpers\ContainerHelper;
 use ZnCore\Base\Container\Interfaces\ContainerConfiguratorInterface;
 use ZnCore\Base\App\Interfaces\AppInterface;
