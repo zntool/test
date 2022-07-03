@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Traits;
 
-use Illuminate\Support\Enumerable;
+use ZnCore\Domain\Collection\Interfaces\Enumerable;
 use ZnCore\Base\FileSystem\Helpers\FileStorageHelper;
 use ZnCore\Base\Validation\Exceptions\UnprocessibleEntityException;
 use ZnCore\Domain\Entity\Helpers\CollectionHelper;
