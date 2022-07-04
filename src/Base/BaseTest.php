@@ -2,11 +2,10 @@
 
 namespace ZnTool\Test\Base;
 
-use PHPUnit\Framework\TestCase;
 use ZnTool\Test\Libs\FixtureLoader;
 use ZnTool\Test\Traits\AssertTrait;
 
-abstract class BaseTest extends TestCase
+abstract class BaseTest extends BaseTestCase
 {
 
     use AssertTrait;

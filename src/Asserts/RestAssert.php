@@ -2,10 +2,9 @@
 
 namespace ZnTool\Test\Asserts;
 
+use Psr\Http\Message\ResponseInterface;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
 use ZnTool\Test\Helpers\RestHelper;
-use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\ResponseInterface;
 
 abstract class RestAssert extends BaseAssert
 {

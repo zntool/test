@@ -2,7 +2,6 @@
 
 namespace ZnTool\Test\Asserts;
 
-
 use ZnCore\Base\Text\Helpers\TextHelper;
 use ZnTool\Test\Helpers\RestHelper;
 use Psr\Http\Message\ResponseInterface;
@@ -31,5 +30,4 @@ class RestWebAssert extends RestAssert
         $this->assertEquals(false, $isFail);
         return $this;
     }
-
 }
