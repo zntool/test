@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Base;
 
-use ZnCore\Base\Develop\Helpers\DeprecateHelper;
+use ZnCore\Code\Helpers\DeprecateHelper;
 use ZnTool\Test\Asserts\RestApiAssert;
 use Psr\Http\Message\ResponseInterface;
 

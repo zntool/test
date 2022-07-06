@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Asserts;
 
-use ZnCore\Base\Develop\Helpers\DeprecateHelper;
+use ZnCore\Code\Helpers\DeprecateHelper;
 use ZnLib\Components\Http\Enums\HttpHeaderEnum;
 use ZnLib\Components\Http\Enums\HttpStatusCodeEnum;
 use ZnCore\Arr\Helpers\ArrayHelper;
