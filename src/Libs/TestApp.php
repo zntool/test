@@ -2,8 +2,8 @@
 
 namespace ZnTool\Test\Libs;
 
-use ZnCore\Base\Container\Interfaces\ContainerConfiguratorInterface;
-use ZnCore\Base\App\Base\BaseApp;
+use ZnCore\Container\Interfaces\ContainerConfiguratorInterface;
+use ZnCore\App\Base\BaseApp;
 
 //use ZnSandbox\Sandbox\App\Subscribers\WebDetectTestEnvSubscriber;
 

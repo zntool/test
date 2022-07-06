@@ -5,10 +5,10 @@ namespace ZnTool\Test\Repositories;
 use ZnCore\Base\Arr\Helpers\ArrayHelper;
 use ZnCore\Base\Arr\Helpers\FilterHelper;
 use ZnLib\Components\DynamicEntity\Entities\DynamicEntity;
-use ZnCore\Base\FileSystem\Helpers\FileStorageHelper;
+use ZnCore\FileSystem\Helpers\FileStorageHelper;
 use ZnLib\Components\Store\Base\BaseFileCrudRepository;
 use ZnLib\Components\Store\StoreFile;
-use ZnCore\Domain\Entity\Exceptions\NotFoundException;
+use ZnCore\Entity\Exceptions\NotFoundException;
 use ZnCore\Domain\Query\Entities\Query;
 use ZnLib\Rpc\Domain\Entities\RpcResponseEntity;
 
