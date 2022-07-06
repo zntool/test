@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Libs\FixtureLoader;
 
-use ZnCore\Base\Instance\Helpers\InstanceHelper;
+use ZnCore\Instance\Helpers\InstanceHelper;
 use yii\test\Fixture;
 
 class YiiFixtureLoader implements FixtureLoaderInterface

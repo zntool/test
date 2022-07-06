@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Traits;
 
-use ZnCore\Base\Env\Enums\EnvEnum;
+use ZnCore\Env\Enums\EnvEnum;
 use ZnLib\Rpc\Domain\Facades\RpcClientFacade;
 use ZnLib\Rpc\Domain\Libs\RpcAuthProvider;
 use ZnLib\Rpc\Domain\Libs\RpcProvider;

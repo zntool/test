@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Asserts;
 
-use ZnCore\Base\Arr\Helpers\ArrayHelper;
+use ZnCore\Arr\Helpers\ArrayHelper;
 use ZnTool\Test\Base\BaseTestCase;
 use ZnTool\Test\Helpers\RestHelper;
 

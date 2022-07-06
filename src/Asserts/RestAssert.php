@@ -3,7 +3,7 @@
 namespace ZnTool\Test\Asserts;
 
 use Psr\Http\Message\ResponseInterface;
-use ZnCore\Base\Arr\Helpers\ArrayHelper;
+use ZnCore\Arr\Helpers\ArrayHelper;
 use ZnTool\Test\Helpers\RestHelper;
 
 abstract class RestAssert extends BaseAssert

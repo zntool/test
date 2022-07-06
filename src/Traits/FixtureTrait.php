@@ -2,7 +2,7 @@
 
 namespace ZnTool\Test\Traits;
 
-use ZnCore\Base\Arr\Helpers\ArrayHelper;
+use ZnCore\Arr\Helpers\ArrayHelper;
 use ZnLib\Rpc\Domain\Libs\RpcFixtureProvider;
 
 trait FixtureTrait
