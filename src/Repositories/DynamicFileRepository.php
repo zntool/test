@@ -6,7 +6,7 @@ use ZnCore\Arr\Helpers\ArrayHelper;
 use ZnCore\Arr\Helpers\FilterHelper;
 use ZnLib\Components\DynamicEntity\Entities\DynamicEntity;
 use ZnCore\FileSystem\Helpers\FileStorageHelper;
-use ZnLib\Components\Store\Base\BaseFileCrudRepository;
+use ZnDomain\Сomponents\FileRepository\Base\BaseFileCrudRepository;
 use ZnLib\Components\Store\StoreFile;
 use ZnCore\Entity\Exceptions\NotFoundException;
 use ZnCore\Query\Entities\Query;
