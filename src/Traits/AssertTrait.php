@@ -5,7 +5,7 @@ namespace ZnTool\Test\Traits;
 use ZnCore\Collection\Interfaces\Enumerable;
 use ZnCore\FileSystem\Helpers\FileStorageHelper;
 use ZnDomain\Validator\Exceptions\UnprocessibleEntityException;
-use ZnDomain\Entity\Helpers\CollectionHelper;
+use ZnCore\Collection\Helpers\CollectionHelper;
 use ZnDomain\Entity\Helpers\EntityHelper;
 use ZnLib\Components\Store\Helpers\StoreHelper;
 use ZnTool\Test\Helpers\TestHelper;

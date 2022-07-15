@@ -3,7 +3,7 @@
 namespace ZnTool\Test\Asserts;
 
 use ZnCore\Collection\Interfaces\Enumerable;
-use ZnDomain\Entity\Helpers\CollectionHelper;
+use ZnCore\Collection\Helpers\CollectionHelper;
 
 class DataTestCase extends BaseAssert
 {
