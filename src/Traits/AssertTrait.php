@@ -4,9 +4,9 @@ namespace ZnTool\Test\Traits;
 
 use ZnCore\Collection\Interfaces\Enumerable;
 use ZnCore\FileSystem\Helpers\FileStorageHelper;
-use ZnCore\Validation\Exceptions\UnprocessibleEntityException;
-use ZnCore\Entity\Helpers\CollectionHelper;
-use ZnCore\Entity\Helpers\EntityHelper;
+use ZnDomain\Validator\Exceptions\UnprocessibleEntityException;
+use ZnDomain\Entity\Helpers\CollectionHelper;
+use ZnDomain\Entity\Helpers\EntityHelper;
 use ZnLib\Components\Store\Helpers\StoreHelper;
 use ZnTool\Test\Helpers\TestHelper;
 
